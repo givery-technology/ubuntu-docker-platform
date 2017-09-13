@@ -1,0 +1,12 @@
+[Unit]
+#Requires=blue.socket
+
+[Service]
+Type=simple
+ExecStart=/var/app/current/application
+ExecStop=/bin/kill -SIGINT $MAINPID
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+NonBlocking=true
+Environment=PORT=5000
