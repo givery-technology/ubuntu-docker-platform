@@ -13,7 +13,7 @@
       "instance_type": "t2.micro",
       "ssh_username": "ubuntu",
       "ssh_pty": "true",
-      "ami_name": "Go server with Docker, Nginx, and Systemd running on Ubuntu Server 16.04 LTS",
+      "ami_name": "64bit Ubuntu 16.04 {{user `platform_version`}} running Docker",
       "tags": {
         "eb_platform_name": "{{user `platform_name`}}",
         "eb_platform_version": "{{user `platform_version`}}",
