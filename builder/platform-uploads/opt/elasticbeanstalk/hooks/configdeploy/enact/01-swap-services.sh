@@ -27,6 +27,5 @@ elif [[ $GREEN_STATUS == "active" ]]; then
 	sudo systemctl stop green &
 else
 	echo "Neither service was active, starting blue service"
-	# Start blue
 	sudo systemctl restart blue
 fi
