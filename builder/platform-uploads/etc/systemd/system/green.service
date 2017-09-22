@@ -10,3 +10,4 @@ TimeoutStopSec=90
 Restart=on-failure
 NonBlocking=true
 Environment=PORT=5000
+EnvironmentFile=/etc/systemd/system/green.env
