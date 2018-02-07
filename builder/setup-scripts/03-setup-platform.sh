@@ -2,7 +2,7 @@
 
 . $BUILDER_DIR/CONFIG
 
-apt install -y wget tree git
+apt install -y wget tree git nmap
 
 # Load the systemd config files
 sudo systemctl daemon-reload
