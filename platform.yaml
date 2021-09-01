@@ -19,4 +19,4 @@ metadata:
   operating_system_name: Ubuntu
   operating_system_version: 16.04
   programming_language_name: Go
-  programming_language_version: 1.9
+  programming_language_version: 1.17
