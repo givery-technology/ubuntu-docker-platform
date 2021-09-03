@@ -19,6 +19,65 @@ You can follow the steps [here](http://docs.aws.amazon.com/elasticbeanstalk/late
 
 Be aware that the build process will leave a beanstalk environment running which is used to run Packer. You will have to kill this environment manually when the process is done.
 
+### Build proccess samples (recommended)
+
+```sh
+$ export AWS_EB_PROFILE=orca
+$ export AWS_EB_REGION=ap-northeast-1
+$ ebp init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) cn-northwest-1 : China (Ningxia)
+14) us-east-2 : US East (Ohio)
+15) ca-central-1 : Canada (Central)
+16) eu-west-2 : EU (London)
+17) eu-west-3 : EU (Paris)
+18) eu-north-1 : EU (Stockholm)
+19) eu-south-1 : EU (Milano)
+20) ap-east-1 : Asia Pacific (Hong Kong)
+21) me-south-1 : Middle East (Bahrain)
+22) af-south-1 : Africa (Cape Town)
+(default is 3): 9
+
+
+Select a platform to use
+1) ubuntu-docker-platform
+2) [ Create new Platform ]
+(default is 1): 1
+
+Would you like to be able to log into your platform packer environment?
+(Y/n): Y
+
+Select a keypair.
+1) akihiro.miyashita
+2) aws-eb
+3) orca-codeprep-prod
+4) orca-dev
+5) orca-track-prod
+6) orca-track-staging
+7) [ Create new KeyPair ]
+(default is 6): 4
+
+$ # specify and execute new version.
+$ ebp create 1.x.x
+```
+
+### How to test of build artifacts
+
+An AMI will be created with the name `64bit Ubuntu xx.xx x.x.x running Docker`, and you can use it to create an EC2 instance and connect to it via SSH to check the environment. 
+
 ## Zero Downtime Deploys
 
 This platform takes advantage of the `SO_REUSEPORT` socket option. The general strategy is as follows:
