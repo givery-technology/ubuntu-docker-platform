@@ -6,7 +6,7 @@
 #
 #   or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-version: "1.1.0"
+version: "1.0"
 
 provisioner:
   type: packer
@@ -19,4 +19,4 @@ metadata:
   operating_system_name: Ubuntu
   operating_system_version: 16.04
   programming_language_name: Go
-  programming_language_version: 1.9
+  programming_language_version: 1.16.3
